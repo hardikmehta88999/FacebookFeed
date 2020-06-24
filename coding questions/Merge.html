@@ -1,0 +1,30 @@
+<h1 id="heading">Merge the Elements</h1>
+ var A = [1, 4, 7,8, 10,'-','-','-']<br/>
+   var B = [2, 3, 9]<br/>
+   <h1 id="result"></h1>
+<button  onclick="handleClick()">click</button>
+<script>
+function handleClick() {
+   var A = [1, 4, 7,8, 10,'-','-','-']
+   var B = [2, 3, 9]
+    var index = A.indexOf('-');
+  var i,j,temp;
+        for(i=B.length - 1;i>=0;i--){
+            temp = A[index-1];
+            for(j=A.length-index; j>=0 && B[i] < A[j];j--){
+                A[j+1] = A[j];
+            }
+            if(j!=A.length-2 || temp > B[i]){
+               A[j+1] = B[i];
+                B[i] = temp;
+            }
+        }
+   for(var k = 0;k<B.length;k++)
+  {
+     A[index] = B[k];
+       index++;
+  }
+  document.getElementById('result').innerHTML=(A)
+}
+
+</script>
