@@ -65,9 +65,7 @@ class Login extends Component {
                 firebase.firestore().collection('user').doc(user.user.uid).set({
 
                     email: this.state.email,
-                    followers: [],
                     name: this.state.name,
-                    following: [],
                     uid: user.user.uid,
                     image: "https://image.shutterstock.com/image-vector/people-vector-icon-260nw-378571234.jpg"
                 })
